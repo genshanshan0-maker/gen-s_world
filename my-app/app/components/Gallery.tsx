@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const works = [
   { id: 1, title: "Epic RPG Project", category: "GAME DEV", color: "bg-blue-400" },
   { id: 2, title: "Speedrun Challenge", category: "YOUTUBE", color: "bg-red-400" },
   { id: 3, title: "Unity Shader Tech", category: "TECH DEMO", color: "bg-purple-400" },
   { id: 4, title: "Indie Game Festival", category: "EVENT", color: "bg-green-400" },
-  { id: 5, title: "りむるのマインクラフト", category: "EVENT", color: "bg-green-400" },
+  { id: 5, title: "りむるのスライムキャッチャー", category: "ゲーム", color: "bg-green-400", link: "/game" },
 ];
 
 export default function Gallery() {
@@ -106,9 +107,15 @@ export default function Gallery() {
                         <button className="flex-1 py-3 bg-slate-100 dark:bg-slate-800 rounded-xl font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                             Demo
                         </button>
-                        <button className="flex-1 py-3 bg-cyan-500 text-white rounded-xl font-bold hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/30">
-                            View Project
-                        </button>
+                        {selectedWork.link ? (
+                            <Link href={selectedWork.link} className="flex-1 py-3 bg-cyan-500 text-white rounded-xl font-bold hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/30 text-center flex items-center justify-center">
+                                Play Game
+                            </Link>
+                        ) : (
+                            <button className="flex-1 py-3 bg-cyan-500 text-white rounded-xl font-bold hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/30">
+                                View Project
+                            </button>
+                        )}
                     </div>
                 </div>
             </motion.div>
