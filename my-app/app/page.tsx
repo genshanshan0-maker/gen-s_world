@@ -90,7 +90,7 @@ export default function Home() {
           <div className={styles.linkGrid}>
             <a 
               className={styles.linkCard} 
-              href="https://www.youtube.com/@NizurasuChannel" 
+              href="https://www.youtube.com/@Serenchannel-c6x" 
               target="_blank" 
               rel="noopener noreferrer"
             >
